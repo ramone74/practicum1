@@ -28,7 +28,6 @@ def calc1(exp=list(str(input('Вводите: ')).split(' '))):
     if exp[0] == 'минус':
         flag_minus = -1
         exp.pop(0)
-        print(exp)
         
     if exp[1] != 'плюс' and exp[1] != 'минус' and exp[1] != 'умножить' and exp[1] != 'разделить' and exp[1] != 'степени':
         if flag_minus == -1:
@@ -44,7 +43,7 @@ def calc1(exp=list(str(input('Вводите: ')).split(' '))):
             b = digit[exp[3]]
         if len(exp) >= 5:
             if flag_minus == -1:
-                b -= digit[exp[4]] #тута поменял
+                b -= digit[exp[4]]
                 flag_minus = 1
             else:
                 b += digit[exp[4]]
@@ -101,10 +100,9 @@ def calc1(exp=list(str(input('Вводите: ')).split(' '))):
         a_res = res % 100 - res % 10
         b_res = res % 10
         if flag_res == -1:
-            return "минус " + get_key(digit, a_res) + " "+ get_key(digit, b_res), a, b, res
+            return "минус " + get_key(digit, a_res) + " "+ get_key(digit, b_res)
         else:
-            return get_key(digit, a_res) + " "+ get_key(digit, b_res), a, b, res
+            return get_key(digit, a_res) + " "+ get_key(digit, b_res)
 print(calc1())
     
     
-#Проблема с однозначными вторыми числами и двузначными первыми
